@@ -5,32 +5,28 @@ import { MdArrowBack, MdArrowForward } from "react-icons/md";
 
 const projects = [
   {
-    title: "CallHQ",
-    category: "Voice AI Calling Platform",
-    tools: "Voice AI, Calling Automation, CRM Integrations",
-    image: "/images/callhq.png",
-    link: "https://callhq.ai",
+    title: "Expense Flow",
+    category: "AI-Powered Expense Management System",
+    tools:
+      "React, Node.js, Express, MySQL, OCR, Role-Based Access, Workflow Automation",
+    image: "/images/expense.png",
+    link: "https://github.com/Maitreya05/reimbursement-managment-system-EXPENSEFLOW",
   },
   {
-    title: "Whatsapp Automation",
-    category: "WABA Application",
-    tools: "WhatsApp Business API, Workflow Automation, Notifications",
-    image: "/images/whatsapp.png",
-    link: "https://whatsapp.callhq.ai",
+    title: "Vedatma Hospital System",
+    category: "Hospital Management Web Application",
+    tools:
+      "React, REST APIs, Dashboard UI, Appointment Management, Dynamic Routing",
+    image: "/images/hospital.png",
+    link: "https://hospital-managment-system-fawn-six.vercel.app/",
   },
   {
-    title: "Broki",
-    category: "Real Estate Platform for FnB Industry",
-    tools: "Property Discovery, Lead Management, Marketplace Workflows",
-    image: "/images/broki.png",
-    link: "https://broki.in",
-  },
-  {
-    title: "Orrdr.com",
-    category: "Ecommerce Platform and Mobile App",
-    tools: "Ecommerce, Mobile Experience, Order Management",
-    image: "/images/orrdr.png",
-    link: "https://orrdr.com",
+    title: "MediRent4Life",
+    category: "Medical Equipment Rental Platform",
+    tools:
+      "HTML, CSS, JavaScript, MySQL, Booking System, Admin Dashboard",
+    image: "/images/medirent.png",
+    link: "#",
   },
 ];
 
@@ -77,6 +73,7 @@ const Work = () => {
           >
             <MdArrowBack />
           </button>
+
           <button
             className="carousel-arrow carousel-arrow-right"
             onClick={goToNext}
@@ -97,21 +94,28 @@ const Work = () => {
               {projects.map((project, index) => (
                 <div className="carousel-slide" key={index}>
                   <div className="carousel-content">
+
                     <div className="carousel-info">
                       <div className="carousel-number">
                         <h3>0{index + 1}</h3>
                       </div>
+
                       <div className="carousel-details">
                         <h4>{project.title}</h4>
+
                         <p className="carousel-category">
                           {project.category}
                         </p>
+
                         <div className="carousel-tools">
-                          <span className="tools-label">Tools & Features</span>
+                          <span className="tools-label">
+                            Tools & Features
+                          </span>
                           <p>{project.tools}</p>
                         </div>
                       </div>
                     </div>
+
                     <div className="carousel-image-wrapper">
                       <WorkImage
                         image={project.image}
@@ -119,6 +123,7 @@ const Work = () => {
                         link={project.link}
                       />
                     </div>
+
                   </div>
                 </div>
               ))}
@@ -130,8 +135,9 @@ const Work = () => {
             {projects.map((_, index) => (
               <button
                 key={index}
-                className={`carousel-dot ${index === currentIndex ? "carousel-dot-active" : ""
-                  }`}
+                className={`carousel-dot ${
+                  index === currentIndex ? "carousel-dot-active" : ""
+                }`}
                 onClick={() => goToSlide(index)}
                 aria-label={`Go to project ${index + 1}`}
                 data-cursor="disable"
